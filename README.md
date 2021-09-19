@@ -1,2 +1,2 @@
-# EECS1710-Lab4-Yingni Chen
+# EECS1710Lab4
  for assignment
