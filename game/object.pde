@@ -1,13 +1,18 @@
-class Object {
+ 
+ 
+ class Object {
   
   PVector position;
   PVector speed;
   int timestamp;
+  int y;
   
   Object(float x, float y) {
+   
     position = new PVector(x, y);
     timestamp = millis();
-    speed = new PVector(random(-1, 1), random(-1, 2));
+    
+      
   }
   
   void update() {
@@ -15,10 +20,26 @@ class Object {
     position.y += gravity;
     speed.mult(friction);
     position.y = constrain(position.y, 0, floor);
+   
   }
   
   void draw() {
-    ellipse(position.x, position.y, 10, 10);
+     
+   
+      image(ball, position.x, y++);
+    
+      image(bowknot, position.x, y-200);
+   
+      image(watermelon, position.x, y-300);
+   
+     if(y>640) {
+       y=0;
+     }
+    
+      
+    
+    
+    
   }
   
   void run() {
